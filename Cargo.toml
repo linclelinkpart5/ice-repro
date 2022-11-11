@@ -1,0 +1,17 @@
+[package]
+edition = "2021"
+name = "ice-repro"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arduino-hal = { git = "https://github.com/rahix/avr-hal", features = [
+    "arduino-uno",
+] }
+panic-halt = "0.2"
+
+[profile.dev]
+lto = true
+opt-level = "s"
+panic = "abort"
